@@ -1,34 +1,44 @@
 export class Calculator {
-
-  constructor(leftOperand = 0, rightOperand = 0) {
-    this.leftOperand = this.isFloat(leftOperand) ? parseFloat(leftOperand) : parseInt(leftOperand);
-    this.rightOperand = this.isFloat(rightOperand) ? parseFloat(rightOperand) : parseInt(rightOperand);
+  constructor(firstOperand = 0, secondOperand = 0) {
+    this.firstOperand = this.isFloat(firstOperand) ? parseFloat(firstOperand) : parseInt(firstOperand);
+    this.secondOperand = this.isFloat(secondOperand) ? parseFloat(secondOperand) : parseInt(secondOperand);
   }
 
   add() {
-    return this.leftOperand + this.rightOperand;
+    return this.firstOperand + this.secondOperand;
   }
 
   subtract() {
-    return this.leftOperand - this.rightOperand;
+    return this.firstOperand - this.secondOperand;
   }
 
   multiply() {
-    return this.leftOperand * this.rightOperand;
+    return this.firstOperand * this.secondOperand;
   }
 
   divide() {
-    return this.divisionIsValid() ? this.leftOperand / this.rightOperand : 'ERROR';
+    return this.divisionIsValid() ? this.firstOperand / this.secondOperand : 'ERROR';
   }
 
-  isFloat(operand){
+  getRemainder(){
+    return this.divisionIsValid() ? this.firstOperand % this.secondOperand : 'ERROR';
+  }
+
+  square(){
+    return this.firstOperand ** 2;
+  }
+
+  squareRoot(){
+    return Math.sqrt(this.firstOperand);
+  }
+
+  isFloat(operand = ''){
     if(operand.includes('.')) return true;
     return false;
   }
 
   divisionIsValid(){
-    return this.rightOperand !== 0 ? true : false; 
+    return this.secondOperand !== 0 ? true : false; 
   }
 
-  
 }
