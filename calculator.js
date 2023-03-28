@@ -18,11 +18,17 @@ export class Calculator {
   }
 
   divide() {
-    return this.leftOperand / this.rightOperand;
+    return this.divisionIsValid() ? this.leftOperand / this.rightOperand : 'ERROR';
   }
 
   isFloat(operand){
     if(operand.includes('.')) return true;
     return false;
   }
+
+  divisionIsValid(){
+    return this.rightOperand !== 0 ? true : false; 
+  }
+
+  
 }
