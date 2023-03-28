@@ -11,7 +11,8 @@
         "rules": {
           "no-unused-vars": "warn",
           "eqeqeq": ["warn", "smart"],
-          "no-empty": "warn"
+          "no-empty": "warn",
+          "semi": "error"
         }
       }
     ],
